@@ -35,8 +35,8 @@ def read_urls(filename):
                 if path[5:-5] not in puzzle_urls and "puzzle" in path:
                     puzzle_urls.append(path[5:-5])
             puzzle_urls.sort(key=lambda x: x[-8:-4])
-    urls = list(map(lambda each: "http://"+server + "/" + each, urls))
-    return urls
+    puzzle_urls = list(map(lambda each: "http://"+server + "/" + each, puzzle_urls))
+    return puzzle_urls
 
 
 def download_images(img_urls, dest_dir):
